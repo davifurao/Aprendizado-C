@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "imc.C": "cpp"
+        "imc.C": "cpp",
+        "somaDoisValores.C": "cpp",
+        "print.C": "cpp",
+        "código sem comentários.C": "cpp"
     }
 }

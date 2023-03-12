@@ -17,7 +17,10 @@ int main(){
     printf("Digite o segundo número: ");//método que vai printar no terminal o recado que está entre aspas
     scanf("%d",&valor2);
     soma=valor1+valor2;//operação de soma
-    printf("%d\n",&soma);//impressão da variável soma
+    printf("%d\n",soma);//impressão da variável soma
     return 0;//término do programa, retira o mesmo da memória
 
 }
+
+
+//OBS: O printf não precisa de um ponteiro. Então a variável soma é representada como "soma". Já no scanf, como é preciso de um ponteiro para armazenar o valor, então colocamos o "&"

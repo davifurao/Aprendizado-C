@@ -2,3 +2,225 @@ A linguagem C é uma linguagem compilada(todo o código é transformado em lingu
 A linguagem é baseada na linguagem BCPL e a Algol 68.
 Atualmente, o C possui "filhos", ou melhor, linguagens derivadas do C, como por exemplo: C++,Objective-C,swift.
 
+1-Soma de dois valores.
+
+Para realizarmos a soma de dois valores em C, eu fiz a inclusão de algumas bibliotecas, como o <stdio.h>,<math.h>,<stdlib.h>,<string.h>.
+Nesse caso, como retornaremos um inteiro para o sistema operacional, então colocamos a função main() com o tipo inteiro.
+
+Logo após iniciarmos o main(), iremos declarar as variáveis(quem já estudou Java tá ligado no que eu tô falando hehe).Variáveis representam uma forma de identificar por um nome simbólico uma região da memória que armazena um valor sendo utilizado por uma função.
+Em C, uma variável deve estar associada a um dos tipos de dados(int,float, etc).
+
+Portanto até agora temos: 
+================================
+================================
+
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+
+}
+
+================================
+
+logo após, no código, declaramos as variáveis, não esquecendo do tipo.
+No caso, como o tipo é um inteiro, então declaramos com int;
+OBS: A cada final de linha deveremos colocar um ";"
+
+Assim ficando:
+=================================
+=================================
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+ int valor1,valor2,soma;
+}
+=================================
+
+
+Logo após iremos printar no terminal a pergunta do primeiro valor declarado, com a função printf. O printf é uma função que manipula as transferencias de
+ dados entre os dispositivos de saida(que no nosso caso, seria a tela/console). Essa função opera sobre "streams", ou melhor, fluxos de caracteres. No caso, o 
+ printf() opera formatando os dados. Ele pode ser escrito por padrão sem a definição do tipo de tipo de dados, mas também pode ser escrito, como primeiro argumento,
+ com o tipo de dado. Por exemplo, um inteiro(declarado como valorInteiro) de valor 10 irá ser mostrado no terminal com a função printf(). Para fazermos isso
+ definimos o tipo da variável que foi declarada, que nesse caso é inteiro com "%d".Então o printf seria escrito como:printf("%d",valorInteiro), lembrando que o primeiro argumento é dado
+ em forma de string. Para saber mais sobre em: https://homepages.dcc.ufmg.br/~rodolfo/aedsi-2-10/printf_scanf/printfscanf.html. Dado a explicação
+ inicial temos o código:
+
+=================================
+=================================
+
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+ int valor1,valor2,soma;
+ printf("Digite o primeiro valor");
+}
+==================================
+
+Logo após isso, utilizamos a função scanf() para ler o dado do teclado(input) e atribuir o valor no espaço da memória. Para isso devemos colocar dois argumentos:
+uma string dizendo qual o tipo de dado e o valor que será guardado na variável. Uma fato interessante é que o segundo argumento(variável que terá um valor atribuído)
+tem que possuir um ponteiro.
+Mas o que raios é um ponteiro?
+
+Um ponteiro é um apontador hehe. No caso é uma variável que armazena o espaço de memória. Não querendo entrar muito em detalhes, mas o ponteiro é importante para a alocação 
+dinâmica da memória(procure por memória heap).Nesse caso, de forma bem simples, a variável estará sendo alocada em um espaço aleatório da memória, não necessariamente próximo do 
+"espaço" onde o programa está sendo executado, que depois será "desalpontada". Um exemplo prático para o conceito de apontadores é quando vamos armazenar algum arquivo no sistema operacional(linux por exemplo),
+que o sistema de arquivos quebra o arquivo que irá ser armazenado em pequenos pedacinhos, que irão ser guardados em diferentes espaços da memória(por exemplo, um irá ser armazenado no espaço 1 e outro irá 
+ser armazenado no espaço 1111111111, com um sendo sucessor do outro).A exclusão é o "desapontamento"(minha qualidade de dar nomes é incrível hehee) ou melhor, a exclusão do ponteiro, que deixa o arquivo inacessível pelo
+sistema de arquivos(e que posteriormente poderá ser sobrescrita). Tendo em vista esse pequeno resumo sobre apontadores vamos para a função scanf()
+
+No nosso caso, como iremos atribuir um valor em inteiro para a variável valor1, temos a função:
+scanf("%d",&valor1)
+
+Isso significa basicamente "Leia um inteiro e atribua/aponte esse valor à variável valor1"
+
+OBS: Caso formos digitar em printf(&valor1) logo após o código acima, teremos o endereço da memória em que está guardado o valor, e não o valor atribuído a ele.
+Para termos o valor e não o endereço da memória, digitamos printf(valor1).
+
+
+
+==================================
+==================================
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+ int valor1,valor2,soma;
+ printf("Digite o primeiro valor");
+ scanf("%d",&valor1);
+}
+==================================
+
+Logo após isso continuaremos com o printf() para aparecer na tela outra mensagem requisitando outra variável, para nosso código de soma ter o mínimo de usabilidade :);
+==================================
+==================================
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+ int valor1,valor2,soma;
+ printf("Digite o primeiro valor");
+ scanf("%d",&valor1);
+ printf("Digite o segundo valor");
+}
+==================================
+
+Agora faremos o que foi feito na variável 1 na variável 2 com scanf()
+==================================
+==================================
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+ int valor1,valor2,soma;
+ printf("Digite o primeiro valor");
+ scanf("%d",&valor1);
+ printf("Digite o segundo valor");
+ scanf("%d",&valor2);
+}
+==================================
+
+Agora realizamos a soma(por baixo dos panos estamos fazendo a soma e armazenando o resultado na variável soma):
+==================================
+==================================
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+ int valor1,valor2,soma;
+ printf("Digite o primeiro valor");
+ scanf("%d",&valor1);
+ printf("Digite o segundo valor");
+ scanf("%d",&valor2);
+ soma = valor1+valor2;
+}
+==================================
+
+Agora escrevemos no terminal o valor da variável soma utilizando a função printf()
+==================================
+==================================
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+ int valor1,valor2,soma;
+ printf("Digite o primeiro valor");
+ scanf("%d",&valor1);
+ printf("Digite o segundo valor");
+ scanf("%d",&valor2);
+ soma = valor1+valor2;
+ printf("O valor da soma é: %d",soma);
+}
+=====================================
+Por ultimo escrevemos a saída do programa com return 0.
+
+Rapidamente, o que seria o return 0 ?
+return é uma função interna do sistema que encerrará o processo(opcionalmente retornando um valor) e retornará para o processo pai(ver hierarquia de processos) o status da execução, com 0 sendo
+uma execução bem sucedida, e o valor diferente de zero significa que o programa foi encerrado por algum tipo de erro ou anomalia.
+
+Portanto, nesse caso, retornaremos zero, pois é um programa simples:
+=====================================
+=====================================
+#include <stdio.h>
+#include <math.h> 
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+ int valor1,valor2,soma;
+ printf("Digite o primeiro valor");
+ scanf("%d",&valor1);
+ printf("Digite o segundo valor");
+ scanf("%d",&valor2);
+ soma = valor1+valor2;
+ printf("O valor da soma é: %d",soma);
+ return 0;
+}
+=====================================
+
+Assim terminamos uma operação simples como a soma. Vemos que com uma simples operação de soma pode-se aprender sobre funções fluxos de saída e entrada, sistema de arquivos, apontadores,
+tipos de memória(Heap e stack), hierarquias de processos,threads(talvez em outro artigo eu falo mais sobre), compilação(Talvez em outro arquivo eu falo mais sobre) e a função de retorno.
+
+
+
+
+
+Autor: Davi Souza de Luna
+Github:https://github.com/davifurao
+Linkedin:https://www.linkedin.com/in/davi-luna/
+
+Referências: 
+
+https://www.dca.fee.unicamp.br/cursos/EA876/apostila/HTML/node124.html#:~:text=Vari%C3%A1veis%20representam%20uma%20forma%20de,dados%20descritos%20na%20Se%C3%A7%C3%A3o%202.1.
+https://en.cppreference.com/w/c/language
+https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=
+https://www.inf.ufpr.br/roberto/ci067/01_fluxo.html
+https://www.dca.fee.unicamp.br/cursos/EA876/apostila/HTML/node131.html
+http://mtm.ufsc.br/~azeredo/cursoC/aulas/c220.html
+https://www.inf.ufpr.br/cursos/ci067/Docs/NotasAula/notas-23_Entrada_Sa_ida_Padrao.html
+https://pt.stackoverflow.com/questions/3797/o-que-s%C3%A3o-e-onde-est%C3%A3o-a-stack-e-heap
+https://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap
+https://linuxhint.com/what-does-return-0-do-in-c/#:~:text=Return%200%20indicates%20that%20the,void%20command%20would%20run%20immediately.
+https://learn.microsoft.com/pt-br/cpp/c-language/return-statement-c?view=msvc-170
+
+
+
+Valew por ter lido :|p
