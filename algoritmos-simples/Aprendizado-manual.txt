@@ -1,0 +1,4 @@
+A linguagem C é uma linguagem compilada(todo o código é transformado em linguagem de máquina antes de ser "rodado") que funciona de maneira imperativa/procedural.
+A linguagem é baseada na linguagem BCPL e a Algol 68.
+Atualmente, o C possui "filhos", ou melhor, linguagens derivadas do C, como por exemplo: C++,Objective-C,swift.
+
