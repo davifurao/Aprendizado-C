@@ -16,6 +16,7 @@ int main(){
     scanf("%d",&valor1);//análogo ao Scanner de Java, o mesmo irá ler a entrada do teclado. O %d é para identificar que o tipo de entrada é um tipo inteiro
     printf("Digite o segundo número: ");//método que vai printar no terminal o recado que está entre aspas
     scanf("%d",&valor2);
+    
     soma=valor1+valor2;//operação de soma
     printf("%d\n",soma);//impressão da variável soma
     return 0;//término do programa, retira o mesmo da memória
