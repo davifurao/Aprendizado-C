@@ -10,12 +10,12 @@ int main() {
     float salarioMinimo,salarioUsuario,quantiaSalarios;//A variável deverá ser previamente declarada antes de qualquer coisa
 
 
-    printf("qual o valor do seu salário ?\n");
-    sprintf("%f",&salarioMinimo);
+    printf("qual o valor do Salario minimo ?\n");
+    scanf("%f",&salarioMinimo);
     printf("Escreva o valor do seu salário\n");
-    sprintf("%f",&salarioUsuario);
+    scanf("%f",&salarioUsuario);
     quantiaSalarios=(salarioUsuario/salarioMinimo);
-    printf("você possui um total de %f salarios minimos",quantiaSalarios );
+    printf("você possui um total de %.2f salarios minimos",quantiaSalarios );
     return 0;
 
 
